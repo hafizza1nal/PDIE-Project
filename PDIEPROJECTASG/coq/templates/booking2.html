@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<style>
+    /* Basic reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        border-style: groove;
+        border-width: 20px;
+        border-color: #2E86C1;
+        border-radius: 25px;
+        background: ;
+    }
+    header{
+        width: 100%;
+        height: 150px;
+        position: static;
+        top: 0;
+        border-bottom-style: solid;
+        border-bottom-width: 10px;
+        border-bottom-color: ;
+        background: #2E86C1 ;
+    }
+    .intro{
+        text-align: center;
+        font-size: 60px;
+        font-family: impact;
+        color: white;
+    }
+    #menu{
+        font-size: 40px;
+        cursor: pointer;
+    }
+    #sidenav {
+        height: 60%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 1s;
+        padding-top: 40px;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+        border-radius: 0 0 10px 0;
+        }
+    #sidenav a{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.2s;
+    }
+    #sidenav button{
+        text-decoration: none;
+        margin-left: 23px;
+        font-size: 25px;
+        border: none;
+        outline: black;
+        color: #818181;
+        transition: 0.2s;
+    }
+    #sidenav button:hover{
+        color: whitesmoke;
+        font-size: 33px;
+        cursor: pointer;
+    }
+    #sidenav p{
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+    #sidenav a:hover{
+        color: black;
+        font-size: 33px;
+    }
+    #sidenav #closebtn{
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 35px;
+        margin-left: 50px;
+        color: #818181;
+        cursor: pointer;
+    }
+    #sidenav #closebtn:hover{
+        color: whitesmoke;
+    }
+
+    .article {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .row1 {
+        display: flex;
+        flex-wrap: wrap; /* Allows content to wrap if screen size is small */
+        gap: 0px; 
+        align-items: center; 
+        height: 180px;
+        margin-top: 20px;
+        margin-right: 60px;
+        border: solid;
+        border-radius: 10px;
+        border-width: 5px;
+        border-color: black;
+        background: #27AE60;
+    }
+    
+    .text {
+        flex: 1; /* Takes available space */
+        width: 60%; /* Minimum width to maintain readability */
+        height:180px;
+    }
+
+    p1{
+        font-size: 55px;
+        font-family: verdana;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 60px;
+    }
+    
+    .image {
+        flex: 1; /* Takes available space */
+        min-width: 200px; /* Minimum width to ensure image is visible */
+    }
+    
+    .image img {
+        height: 180px; /* Ensures image scales while maintaining aspect ratio */
+    }
+
+    input[type=text], select, input[type=date], input[type=time] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: #2E86C1;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #87CEFA;
+      }
+
+      .row2 {
+        border-radius: 5px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      footer {
+        background-color: #333; /* Set background color */
+        color: white; /* Set text color */
+        height: 200px;
+        padding: 30px;
+        text-align: center;
+        position: flex;
+        bottom: 0;
+        width: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+
+<script>
+    function openNav() 
+    {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+    function closeNav()
+    {
+        document.getElementById("sidenav").style.width = "0px"
+    }
+</script>
+
+<body>
+    <header>
+        <span id="menu" onclick="openNav()">&#9776;</span>
+        <div id="sidenav">
+            <span id="closebtn" onclick="closeNav()">&times</span>
+            <p><font color="Black">MENU</font></p>
+            <a href="{% url 'event1' %}">Event Registration</a><br>
+            <a href="{% url 'booking1' %}">Facility Booking</a><br>
+            <a href="{% url 'viewbooking' %}">View Booking</a><br><br>
+        </div>
+        
+        <div class="intro">
+            Co-q SMKBI
+        </div>
+    </header>
+
+    <article>
+        <div class="row1">
+            <div class="text">
+                <p1>Football Field</p1>
+            </div>
+            <div class="image">
+                <img src="https://ecupirates.com/images/2020/4/16/Turf_Fields_2020_HI_RES_23.jpg" alt="Description of image">
+            </div>
+        </div>
+
+        <div class="row2">
+
+        <form action="{% url 'booking2' %}" method="post">
+            {% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}<br>
+            <label for="name">Name</label>
+            <input type="text" id="Studentname" name="Studentname" placeholder="Your name..">
+            <label for="facility">Facility</label>
+            <select id="Facilityname" name="Facilityname" required>
+                {% for facility in facilities %}
+                <option value="{{ facility.Facilityname }}">{{ facility.Facilityname }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form><br>
+
+        </div>
+
+
+    </article>
+
+    <footer>
+        <p>Sekolah Menengah Kebangsaan Bukit Indah,</p>
+        <p>Jalan Bukit Indah Utama,</p>
+        <p>Taman Bukit Indah,</p>
+        <p>68000, Ampang,</p>
+        <p>Selangor</p>
+        <br>
+        <p>Contact us: Coq-smkbi@gmail.com | Phone: +1234567890</p>
+    </footer>
+
+</body>
+</html>

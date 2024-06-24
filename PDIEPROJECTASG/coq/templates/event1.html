@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<style>
+    /* Basic reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        border-style: groove;
+        border-width: 20px;
+        border-color: #2E86C1;
+        border-radius: 25px;
+        background: ;
+    }
+    header{
+        width: 100%;
+        height: 150px;
+        position: static;
+        top: 0;
+        border-bottom-style: solid;
+        border-bottom-width: 10px;
+        border-bottom-color: ;
+        background: #2E86C1 ;
+    }
+    .intro{
+        text-align: center;
+        font-size: 60px;
+        font-family: impact;
+        color: white;
+    }
+    #menu{
+        font-size: 40px;
+        cursor: pointer;
+    }
+    #sidenav {
+        height: 60%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 1s;
+        padding-top: 40px;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+        border-radius: 0 0 10px 0;
+        }
+    #sidenav a{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.2s;
+    }
+    #sidenav button{
+        text-decoration: none;
+        margin-left: 23px;
+        font-size: 25px;
+        border: none;
+        outline: black;
+        color: #818181;
+        transition: 0.2s;
+    }
+    #sidenav button:hover{
+        color: whitesmoke;
+        font-size: 33px;
+        cursor: pointer;
+    }
+    #sidenav p{
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+    #sidenav a:hover{
+        color: black;
+        font-size: 33px;
+    }
+    #sidenav #closebtn{
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 35px;
+        margin-left: 50px;
+        color: #818181;
+        cursor: pointer;
+    }
+    #sidenav #closebtn:hover{
+        color: whitesmoke;
+    }
+
+    .row {
+        display: flex;
+        background: white;
+        justify-content: center;
+    }
+
+    .col-0 {
+        width: 80%;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .para0{
+        text-align: left;
+        font-size: 70px;
+        font-family: impact;
+        color: black;
+    }
+
+    .hr1{
+        border-style: solid;
+        border-width: 5px;
+        width: 55%;
+        align: left;
+    }
+
+    .row1 {
+        display: flex;
+        background: white;
+        justify-content: center;
+    }
+
+    .col-1 {
+        width: 80%;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .para1{
+        text-align: left;
+        font-size: 50px;
+        font-family: system-ui;
+        color: black;
+    }
+
+    hr{
+        border-style: groove;
+        border-width: 5px;
+        border-color: Darkkhaki;
+    }
+
+    .row2 {
+        height:250px;
+        background: grey;
+    }
+
+    .col-2 {
+        width: 50%;
+        height:100%;
+        border-style: solid;
+        margin-top: 1px;
+        border-width: 5px;
+        border-color: black;
+        border-radius: 10px;
+        display: flex;
+        margin-left: 120px;
+        justify-content: left;
+        margin-bottom: 20px;
+        position: relative;
+        background: white;
+    }
+
+    .row3 {
+        display: flex;
+        background: white;
+        justify-content: left;
+        margin-left: 120px;
+    }
+
+    p1 {
+        text-align: left;
+        font-size: 20px;
+        font-family: system-ui;
+        color: black;
+    }
+
+    .button {
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: #2E86C1; 
+        color: white; 
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-color:black;
+    }
+
+
+    .row4 {
+        text-align: center;
+        font-weight: bold;
+        font-family: verdana;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .row5 {
+        display: flex;
+        background: white;
+        justify-content: center;
+    }
+
+    .col-5 {
+        width: 80%;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .row6 {
+        height:250px;
+        background: grey;
+    }
+
+
+    .col-6 {
+        width: 50%;
+        height:100%;
+        border-style: solid;
+        margin-top: 1px;
+        border-width: 5px;
+        border-color: black;
+        border-radius: 10px;
+        display: flex;
+        margin-left: 120px;
+        justify-content: left;
+        margin-bottom: 20px;
+        position: relative;
+        background: white;
+    }
+
+    .row7 {
+        display: flex;
+        background: white;
+        justify-content: left;
+        margin-left: 120px;
+    }
+
+    .row8 {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-family: verdana;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .row9 {
+        display: flex;
+        background: white;
+        justify-content: center;
+    }
+
+    .col-9 {
+        width: 80%;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .row10 {
+        height:250px;
+        background: grey;
+    }
+
+
+    .col-10 {
+        width: 50%;
+        height:100%;
+        border-style: solid;
+        margin-top: 1px;
+        border-width: 5px;
+        border-color: black;
+        border-radius: 10px;
+        display: flex;
+        margin-left: 120px;
+        justify-content: left;
+        margin-bottom: 20px;
+        position: relative;
+        background: white;
+    }
+
+    .row11 {
+        display: flex;
+        background: white;
+        justify-content: left;
+        margin-left: 120px;
+    }
+
+    .row12 {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-family: verdana;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    footer {
+        background-color: #333; /* Set background color */
+        color: white; /* Set text color */
+        height: 200px;
+        padding: 30px;
+        text-align: center;
+        position: flex;
+        bottom: 0;
+        width: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+
+<script>
+    function openNav() 
+    {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+    function closeNav()
+    {
+        document.getElementById("sidenav").style.width = "0px"
+    }
+</script>
+
+<body>
+    <header>
+        <span id="menu" onclick="openNav()">&#9776;</span>
+        <div id="sidenav">
+            <span id="closebtn" onclick="closeNav()">&times</span>
+            <p><font color="Black">MENU</font></p>
+            <a href="{% url 'booking1' %}">Facility Booking</a><br>
+            <a href="{% url 'viewbooking' %}">View Booking</a><br><br>
+        </div>
+        
+        <div class="intro">
+        Co-q SMKBI
+        </div>
+    </header>
+
+    <article>
+
+        <div class="row">
+            <div class="cols col-0">
+                <div class="para0">Event</div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="hr1"></div>
+
+        <br><br>
+
+        <div class="row1">
+            <div class="cols col-1">
+                <div class="para1">DCS Family Day</div>
+            </div>
+        </div>
+
+        <br><br>
+
+
+
+        <div class="row2">
+            <div class="cols col-2">
+                <img>
+            </div>
+        </div>
+
+
+        <div class="row3">
+            <p1></p1>
+        </div>
+
+
+        <div class="row4">
+            <nav>
+            <span><a href="{% url 'event2' %}" class="button">Book Here</a></span>
+            </nav>
+        </div>
+
+        <br><br>
+
+        <div class="row5">
+            <div class="cols col-5">
+                <div class="para1">Movie Night</div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row6">
+            <div class="cols col-6">
+                <img>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row7">
+            <p1></p1>
+        </div>
+
+        <br>
+
+        <div class="row8">
+            <nav>
+            <span><a href="{% url 'event2' %}" class="button">Book Here</a></span>
+            </nav>
+        </div>
+
+        <br><br>
+            
+
+
+
+    </article>
+
+    <footer>
+        <p>Sekolah Menengah Kebangsaan Bukit Indah,</p>
+        <p>Jalan Bukit Indah Utama,</p>
+        <p>Taman Bukit Indah,</p>
+        <p>68000, Ampang,</p>
+        <p>Selangor</p>
+        <br>
+        <p>Contact us: Coq-smkbi@gmail.com | Phone: +1234567890</p>
+    </footer>
+
+</body>
+</html>

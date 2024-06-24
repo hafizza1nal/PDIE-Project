@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Image Background</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-image: url('https://onecms-res.cloudinary.com/image/upload/s--Z2ig8PVo--/f_auto,q_auto/c_fill,g_auto,h_676,w_1200/sembawang-primary-school-students-playing-football_0.jpg?itok=TlOyHNuS');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header-content p {
+            font-size: 24px;
+        }
+
+        /* Add a dark overlay to improve text readability */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        article {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 200px; /* Set the width you want */
+            height: 200px; /* Set the height you want */
+            object-fit: cover; /* Ensure the image covers the entire area */
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .text-row {
+            background-color: #2E86C1; /* Set the background color you want */
+            height: 100px; /* Set the height you want */
+            display: flex;
+            justify-content: center; /* Align content to the left */
+            align-items: center;
+            margin-top: 20px; /* Space above the row */
+            padding: 20px;
+            width: 60%; /* Set the width to 80% */
+        }
+
+        .text-row p {
+            font-size: 35px;
+            color: white; /* Text color */
+        }
+
+        .text-row1 {
+            background-color: #2E86C1; /* Set the background color you want */
+            height: 100px; /* Set the height you want */
+            display: flex;
+            justify-content: center; /* Align content to the right */
+            align-items: center;
+            margin-top: 20px; /* Space above the row */
+            padding: 20px;
+            width: 60%; /* Set the width to 80% */
+            margin-left: auto; /* Align to the right */
+        }
+
+        .text-row1 p {
+            font-size: 35px;
+            color: white; /* Text color */
+        }
+
+        .image-left {
+            text-align: left;
+            margin-top: 20px; /* Adjust the margin as needed */
+            margin-left: 130px;
+        }
+
+        .image-left img {
+            width: 500px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: Add border-radius for styling */
+        }
+
+        .image-right {
+            text-align: right;
+            margin-top: 20px; /* Adjust the margin as needed */
+            margin-right: 130px;
+            margin-bottom: 20px;
+        }
+
+        .image-right img {
+            width: 500px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: Add border-radius for styling */
+        }
+
+        footer {
+            background-color: #333; /* Set background color */
+            color: white; /* Set text color */
+            height: 200px;
+            padding: 30px;
+            text-align: center;
+            position: flex;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-content">
+                <h1>Co-curriculum Management System</h1>
+                <p></p>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <article>
+        <h2>Login</h2>
+        <div class="image-row">
+            <div class="image-container">
+                <a href="{% url 'loginadmin' %}">
+                    <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-host-and-admin-marketing-job-vacancies-vector-png-image_6480101.png" alt="Image 1">
+                </a>
+                <p>Admin</p>
+            </div>
+            <div class="image-container">
+                <a href="{% url 'loginuser' %}">
+                    <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-users-icon-png-image_3997401.jpg" alt="Image 2">
+                </a>
+                <p>Student/Teacher</p>
+            </div>
+        </div>
+    </article>
+    <div class="text-row">
+        <p>Register event easily</p>
+    </div>
+    <div class="image-left">
+        <img src="https://blogassets.leverageedu.com/blog/wp-content/uploads/2019/09/23165152/Co-Curricular.jpg" alt="Image Description">
+    </div>
+    <div class="text-row1">
+        <p>Easy facility booking</p>
+    </div>
+    <div class="image-right">
+        <img src="https://integralspor.com/uploads/blog/list/why-municipalities-should-establish-sports-facilities.jpg" alt="Image Description">
+    </div>
+    <footer>
+        <p>Sekolah Menengah Kebangsaan Bukit Indah,</p>
+        <p>Jalan Bukit Indah Utama,</p>
+        <p>Taman Bukit Indah,</p>
+        <p>68000, Ampang,</p>
+        <p>Selangor</p>
+        <br>
+        <p>Contact us: Coq-smkbi@gmail.com | Phone: +1234567890</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
