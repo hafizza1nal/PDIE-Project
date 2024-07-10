@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            width: 100%;
+            height: 110px;
+            position: static;
+            top: 0;
+            background: #2E86C1;
+        }
+        .intro {
+            padding-top: 15px;
+            text-align: center;
+            font-size: 60px;
+            font-family: impact;
+            color: white;
+        }
+        body {
+            background: white;
+        }
+        hr {
+            height: 5px;
+            background-color: black;
+        }
+        .row1 {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .col-1 {
+            width: 30%;
+            margin-top: 1px;
+            height: 300px;
+            border-style: solid;
+            border-width: 5px;
+            border-color: black;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            background: #2E86C1;
+        }
+        .row {
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            font-family: verdana;
+            margin-top: 10px;
+        }
+        p1 {
+            font-size: 20px;
+        }
+        .row2 {
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-family: verdana;
+            margin-top: 10px;
+        }
+        .formstyle {
+            border: 2px solid;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+        .formstyle2 {
+            border: 2px solid;
+            border-radius: 4px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: DarkGray;
+            text-color: white;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            height: 200px;
+            padding: 30px;
+            text-align: center;
+            position: flex;
+            bottom: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro">Co-q SMKBI</div>
+    </header>
+    <hr>
+    <article>
+        <div class="row">
+            <p1>Login</p1>
+        </div>
+
+        <div class="row1">
+            <div class="cols col-1">
+                <div class="row2">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        <h3>Username</h3>
+                        <input type="text" name="Studentname" placeholder="Enter your username" class="formstyle" required><br>
+                        <h3>Password</h3>
+                        <input type="password" name="Studentpass" placeholder="Enter your password" class="formstyle" required><br>
+                        <br>
+                        <button type="submit" class="formstyle2">Login</button>
+                    </form>  
+                    {% if error_message %}
+                    {{ error_message }}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    
+        <hr>
+    </article>
+    
+    <footer>
+        <p>Sekolah Menengah Kebangsaan Bukit Indah,</p>
+        <p>Jalan Bukit Indah Utama,</p>
+        <p>Taman Bukit Indah,</p>
+        <p>68000, Ampang,</p>
+        <p>Selangor</p>
+        <br>
+        <p>Contact us: Coq-smkbi@gmail.com | Phone: +1234567890</p>
+    </footer>
+</body>
+</html>
